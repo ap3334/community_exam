@@ -29,7 +29,7 @@ public class DispatchServlet extends HttpServlet {
                         break;
 
                     case "/usr/article/write/free":
-                        articleController.writeList(rq);
+                        articleController.showWrite(rq);
                         break;
 
                     case "/usr/member/login":

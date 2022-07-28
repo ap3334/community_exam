@@ -20,4 +20,10 @@ public class ArticleService {
     public List<ArticleDto> findAll() {
         return articleRepository.findAll();
     }
+
+    public ArticleDto finById(long id) {
+
+        return articleRepository.finById(id);
+
+    }
 }

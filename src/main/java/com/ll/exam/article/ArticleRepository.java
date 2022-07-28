@@ -41,7 +41,7 @@ public class ArticleRepository {
         return datum;
     }
 
-    public ArticleDto finById(long id) {
+    public ArticleDto findById(long id) {
 
         for (ArticleDto articleDto : datum) {
             if (id == articleDto.getId()) {
@@ -50,5 +50,13 @@ public class ArticleRepository {
         }
 
         return null;
+    }
+
+    public void deleteById(long id) {
+        ArticleDto articleDto = findById(id);
+
+        if (articleDto == null) return;
+
+        datum.remove(articleDto);
     }
 }

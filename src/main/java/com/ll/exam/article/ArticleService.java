@@ -21,9 +21,13 @@ public class ArticleService {
         return articleRepository.findAll();
     }
 
-    public ArticleDto finById(long id) {
+    public ArticleDto findById(long id) {
 
-        return articleRepository.finById(id);
+        return articleRepository.findById(id);
 
+    }
+
+    public void deleteById(long id) {
+        articleRepository.deleteById(id);
     }
 }

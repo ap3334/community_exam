@@ -30,4 +30,8 @@ public class ArticleService {
     public void deleteById(long id) {
         articleRepository.deleteById(id);
     }
+
+    public void modify(long id, String title, String body) {
+        articleRepository.modify(id, title, body);
+    }
 }

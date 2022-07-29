@@ -34,7 +34,7 @@ public class ArticleController {
 
         long id = articleService.write(title, body);
 
-        rq.println("%d번 게시물이 생성 되었습니다.".formatted(id));
+        rq.replace("/usr/article/detail/free/%d".formatted(id), "%d번 게시물이 생성 되었습니다.".formatted(id));
     }
 
     public void showDetail(Rq rq) {
@@ -74,9 +74,7 @@ public class ArticleController {
 
         articleService.deleteById(id);
 
-        rq.println("<div>%d번 게시물이 삭제되었습니다.</div>".formatted(id));
-        rq.println("<div><a href=\"/usr/article/list\">리스트로 이동</a></div>");
-
+        rq.replace("/usr/article/list/free", "%d번 게시물이 삭제되었습니다.".formatted(id));
     }
 
     public void showModify(Rq rq) {
@@ -107,7 +105,6 @@ public class ArticleController {
 
         articleService.modify(id, title, body);
 
-        rq.println("<div>%d번 게시물이 수정되었습니다.</div>".formatted(id));
-        rq.println("<div><a href=\"/usr/article/detail/free/%d\">수정된 글로 이동</a></div>".formatted(id));
+        rq.replace("/usr/article/detail/free/%d".formatted(id), "%d번 게시물이 수정되었습니다.".formatted(id));
     }
 }
